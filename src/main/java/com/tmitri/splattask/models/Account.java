@@ -26,7 +26,7 @@ public class Account {
         this.id = id;
     }
 
-    @Column(name="value")
+    @Column(name = "value", nullable = false, columnDefinition = "int default 100")
     public Long getValue() {
         return this.value;
     }
