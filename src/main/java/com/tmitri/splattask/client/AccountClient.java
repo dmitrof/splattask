@@ -61,12 +61,12 @@ public class AccountClient {
             final Integer id = (Integer)getRandomElementFromSet(idSet);
             rExecutor.submit(new Runnable() {
                 public void run() {
-                    System.out.println("Reading #" + threadNum + ": " +  _accountService.getAmount(id));
+                    System.out.println("Reading thread #" + threadNum + ": id = " + id + " value = " +  _accountService.getAmount(id));
                 }
             });
             wExecutor.submit(new Runnable() {
                 public void run() {
-                    System.out.println("Writing #" + threadNum + ": adding 100 to contained value");
+                    System.out.println("Writing thread #" + threadNum + ": id = " + id + ", adding 100 to contained value");
                     _accountService.addAmount(id, 100L);
                 }
             });
