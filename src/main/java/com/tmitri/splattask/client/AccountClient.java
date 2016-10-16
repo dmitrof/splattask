@@ -66,7 +66,7 @@ public class AccountClient {
             });
             wExecutor.submit(new Runnable() {
                 public void run() {
-                    System.out.println("Writing thread #" + threadNum + ": id = " + id + ", adding 100 to contained value");
+                    System.out.println("Writing thread #" + threadNum + ": id = " + id + ", добавляем 100 к имеющемуся значению");
                     _accountService.addAmount(id, 100L);
                 }
             });
